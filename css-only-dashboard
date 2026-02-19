@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3498db;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #2c3e50;
+            transition: left 0.3s;
+        }
+
+        #sidebar-toggle:checked ~ .sidebar {
+            left: 0;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .tab:checked + label {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        #tab-1:checked ~ #content-1,
+        #tab-2:checked ~ #content-2,
+        #tab-3:checked ~ #content-3 {
+            display: block;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Mode Toggle */
+        #dark-mode-toggle:checked ~ .container {
+            --background-color: #2c3e50;
+            --text-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <input id="sidebar-toggle" type="checkbox">
+    <input id="tab-1" type="radio" name="tab" checked>
+    <input id="tab-2" type="radio" name="tab">
+    <input id="tab-3" type="radio" name="tab">
+    <input id="dark-mode-toggle" type="checkbox">
+
+    <div class="container">
+        <label for="sidebar-toggle">Toggle Sidebar</label>
+        <div class="sidebar">
+            <ul>
+                <li><a href="                             
+                <li><a href="#content-2">Settings</a></li>
+                <li><a href="                            
+            </ul>
+        </div>
+
+        <div class="tabs">
+            <label for="tab-1">Overview</label>
+            <label for="tab-2">Settings</label>
+            <label for="tab-3">Profile</label>
+        </div>
+
+        <div class="tab-content" id="content-1">
+            <h1>Overview</h1>
+            <div class="grid">
+                <div class="grid-item">Widget 1</div>
+                <div class="grid-item">Widget 2</div>
+                <div class="grid-item">Widget 3</div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="content-2">
+            <h1>Settings</h1>
+            <p>Settings content</p>
+        </div>
+
+        <div class="tab-content" id="content-3">
+            <h1>Profile</h1>
+            <p>Profile content</p>
+        </div>
+
+        <label for="dark-mode-toggle">Toggle Dark Mode</label>
+    </div>
+</body>
+</html>
